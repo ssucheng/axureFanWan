@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <script src="../../code/highcharts.js"></script>
+
+
+    <div id="container" style="min-width: 363px; height: 257px; margin: 0 auto"></div>
+
+
+
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+
+            credits: {
+                enabled: false //让官网网址消失
+            },
+            colors: ['#FFC250']
+            ,
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '应届生实际起薪'
+                ,
+                style: {
+                    fontSize: '13px',
+                    color:'#01A09A'
+                },
+            },
+            // subtitle: {
+            //     text: 'Source: WorldClimate.com'
+            // },
+            xAxis: {
+                categories: [
+                    '2014年',
+                    '2013年'
+                ],
+                
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '薪水(元)'
+                }
+            },
+            tooltip: {
+                pointFormat: '应届生薪水<b>{point.y} 元</b>'
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: '薪水',
+                data: [2443, 2199],
+                dataLabels: {
+                    enabled: true,
+                    // rotation: -90,
+                    color: '#FFC250',
+                    align: 'center',
+                    format: '{point.y}', // one decimal
+                    y: -20, // 10 pixels down from the top
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            }]
+        });
+    </script>
+</body>
+
+</html>
